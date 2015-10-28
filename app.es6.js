@@ -10,7 +10,7 @@ app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// smaple
+// sample
 app.get('/', (req, res, next) => {
   res.end('hi nodejs');
 });
