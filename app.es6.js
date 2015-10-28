@@ -1,4 +1,5 @@
 /* eslint-env:node */
+'use strict';
 let express = require('express'),
   bodyParser = require('body-parser');
 let app = express(),
@@ -10,10 +11,13 @@ app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// route controller
+app.use(require('./controllers'));
+
 // sample
-app.get('/', (req, res, next) => {
-  res.end('hi nodejs');
-});
+// app.get('/', (req, res, next) => {
+//   res.end('hi nodejs');
+// });
 
 // run
 app.listen(port, () => {
